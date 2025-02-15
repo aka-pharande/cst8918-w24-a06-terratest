@@ -38,7 +38,7 @@ func TestAzureLinuxVMCreation(t *testing.T) {
 	// Confirm NIC exists and is connected to VM
 	assert.NotEmpty(t, azure.GetVirtualMachineNics(t, vmName, resourceGroupName, subscriptionID))
 
-	// Assert that the VM is running the correct Ubuntu version
+	// Confirm that the VM is running the correct Ubuntu version
 	vmImage := azure.GetVirtualMachineImage(t, vmName, resourceGroupName, subscriptionID)
 	assert.Equal(t, vmImageVersion, vmImage.SKU, "VM is not running the expected Ubuntu version")
 }
